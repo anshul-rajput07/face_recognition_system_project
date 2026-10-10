@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | AttendPro</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <span>AttendPro</span>
+
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html" class="active">
+
+                <i class="fa-solid fa-table-columns"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="attendance.html">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                Mark Attendance
+
+            </a>
+
+
+            <a href="students.html">
+
+                <i class="fa-solid fa-users"></i>
+
+                Students
+
+            </a>
+
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                Reports
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </a>
+
+        </nav>
+
+
+        <!-- Logout -->
+        <div class="logout">
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP NAVBAR -->
+
+        <header class="top-navbar">
+
+            <div class="page-title">
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Welcome back! Here's your latest attendance overview.
+                </p>
+
+            </div>
+
+
+            <div class="teacher-profile">
+
+                <!-- Notification -->
+
+                <div class="notification">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </div>
+
+
+                <!-- Profile -->
+
+                <div class="profile-info">
+
+                    <div class="profile-avatar">
+                        NC
+                    </div>
+
+
+                    <div class="profile-text">
+
+                        <h4>Nirzara Chauhan</h4>
+
+                        <p>Teacher</p>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             STATISTICS CARDS
+        ========================== -->
+
+        <section class="stats-container">
+
+
+            <!-- Total Students -->
+
+            <div class="stat-card total-students">
+
+                <div class="stat-info">
+
+                    <p>Total Students</p>
+
+                    <h2 id="totalStudents">0</h2>
+
+                    <span>
+
+                        <i class="fa-solid fa-users"></i>
+
+                        Active Students
+
+                    </span>
+
+                </div>
+
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Present Students -->
+
+            <div class="stat-card present-students">
+
+                <div class="stat-info">
+
+                    <p>Present</p>
+
+                    <h2 id="presentToday">0</h2>
+
+                    <span>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Students Present
+
+                    </span>
+
+                </div>
+
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-user-check"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Absent Students -->
+
+            <div class="stat-card absent-students">
+
+                <div class="stat-info">
+
+                    <p>Absent</p>
+
+                    <h2 id="absentToday">0</h2>
+
+                    <span>
+
+                        <i class="fa-solid fa-circle-xmark"></i>
+
+                        Students Absent
+
+                    </span>
+
+                </div>
+
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-user-xmark"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Attendance Percentage -->
+
+            <div class="stat-card attendance-rate">
+
+                <div class="stat-info">
+
+                    <p>Attendance Rate</p>
+
+                    <h2 id="attendanceRate">0%</h2>
+
+                    <span>
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        Latest Attendance
+
+                    </span>
+
+                </div>
+
+
+                <div class="stat-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             DASHBOARD CONTENT
+        ========================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- Attendance Overview -->
+
+            <div class="attendance-chart-card">
+
+                <div class="card-header chart-card-header">
+
+                    <div class="chart-heading">
+                        <div class="chart-heading-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h2>Attendance Overview</h2>
+                            <p>Daily present students</p>
+                        </div>
+                    </div>
+
+                    <select id="chartPeriod" class="chart-period-select">
+                        <option value="This Week">This Week</option>
+                        <option value="Last Week">Last Week</option>
+                        <option value="This Month">This Month</option>
+                    </select>
+
+                </div>
+
+                <div class="chart-toolbar">
+                    <div class="chart-legend-custom">
+                        <span class="legend-dot"></span>
+                        <span>Present Students</span>
+                    </div>
+                    <div class="chart-live-badge">
+                        <span></span>
+                        Live data
+                    </div>
+                </div>
+
+                <div class="chart-placeholder">
+                    <canvas id="attendanceOverviewChart"></canvas>
+                </div>
+
+            </div>
+
+
+
+            <!-- Today's Summary -->
+
+            <div class="summary-card">
+
+                <h2>Latest Attendance Summary</h2>
+
+                <p>
+                    Latest attendance status from Supabase
+                </p>
+
+
+                <!-- Present -->
+
+                <div class="summary-item">
+
+                    <div class="summary-icon present">
+
+                        <i class="fa-solid fa-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="summaryPresent">
+                            0 Students
+                        </h3>
+
+                        <p>Present</p>
+
+                    </div>
+
+
+                    <strong id="presentPercentage">
+                        0%
+                    </strong>
+
+                </div>
+
+
+
+                <!-- Absent -->
+
+                <div class="summary-item">
+
+                    <div class="summary-icon absent">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="summaryAbsent">
+                            0 Students
+                        </h3>
+
+                        <p>Absent</p>
+
+                    </div>
+
+
+                    <strong id="absentPercentage">
+                        0%
+                    </strong>
+
+                </div>
+
+
+
+                <!-- Progress Bar -->
+
+                <div class="attendance-progress">
+
+                    <div
+                        class="progress-present"
+                        id="progressPresent">
+                    </div>
+
+                </div>
+
+
+                <div class="progress-label">
+
+                    <span>Attendance Progress</span>
+
+                    <strong id="progressPercentage">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             RECENT ATTENDANCE
+        ========================== -->
+
+        <section class="recent-attendance">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>Recent Attendance</h2>
+
+                    <p>
+                        Latest student attendance records
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="view-all-btn"
+                    onclick="window.location.href='reports.html'">
+
+                    View All
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Table -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Student</th>
+
+                            <th>Student ID</th>
+
+                            <th>Date</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="recentAttendanceTable">
+
+                        <tr>
+
+                            <td colspan="4">
+
+                                Loading attendance records...
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         DASHBOARD JAVASCRIPT
+    ========================== -->
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

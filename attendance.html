@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mark Attendance | AttendPro</title>
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="attendance.css"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="sidebar-logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <span>AttendPro</span>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-table-columns"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a
+                href="attendance.html"
+                class="active"
+            >
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <span>Mark Attendance</span>
+
+            </a>
+
+
+            <a href="students.html">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>Students</span>
+
+            </a>
+
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <span>Reports</span>
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+
+        </nav>
+
+
+        <div class="logout">
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
+
+        <header class="top-header">
+
+
+            <div>
+
+                <h1>
+                    Mark Attendance
+                </h1>
+
+
+                <p>
+                    Manage attendance records using
+                    face recognition.
+                </p>
+
+            </div>
+
+
+            <!-- CURRENT DATE -->
+
+            <div class="date-box">
+
+                <i class="fa-solid fa-calendar"></i>
+
+                <span id="currentDate">
+                    Loading date...
+                </span>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =====================================
+             ATTENDANCE DATE
+        ====================================== -->
+
+        <section class="selection-card">
+
+
+            <div class="selection-header">
+
+                <h2>
+                    Attendance Date
+                </h2>
+
+
+                <p>
+                    Select the date for which you want
+                    to view or modify attendance.
+                </p>
+
+            </div>
+
+
+            <div class="selection-grid">
+
+
+                <!-- DATE ONLY -->
+
+                <div class="select-group">
+
+                    <label>
+                        Attendance Date
+                    </label>
+
+
+                    <input
+                        type="date"
+                        id="attendanceDate"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             ATTENDANCE SECTION
+        ====================================== -->
+
+        <section class="attendance-container">
+
+
+            <!-- =================================
+                 ATTENDANCE HEADER
+            ================================== -->
+
+            <div class="attendance-header">
+
+
+                <div class="attendance-title">
+
+                    <h2>
+                        Recognized Student Attendance
+                    </h2>
+
+
+                    <p>
+                        Attendance will appear here only
+                        after you click Modify Attendance.
+                    </p>
+
+                </div>
+
+
+
+                <!-- ACTION BUTTONS -->
+
+                <div class="attendance-actions">
+
+
+                  
+
+
+
+                    <!-- MODIFY -->
+
+                    <button
+                        class="modify-attendance"
+                        id="modifyAttendance"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-pen-to-square"></i>
+
+                        Modify Attendance
+
+                    </button>
+
+
+
+                    <!-- MARK ALL PRESENT -->
+
+                    <button
+                        class="mark-all-present"
+                        id="markAllPresent"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Mark All Present
+
+                    </button>
+
+
+
+                    <!-- MARK ALL ABSENT -->
+
+                    <button
+                        class="mark-all-absent"
+                        id="markAllAbsent"
+                        type="button"
+                    >
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                        Mark All Absent
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 ATTENDANCE SUMMARY
+            ====================================== -->
+
+            <div class="attendance-summary">
+
+
+                <!-- TOTAL -->
+
+                <div class="summary-box total">
+
+                    <p>
+                        Recognized Students
+                    </p>
+
+
+                    <h3 id="totalCount">
+                        0
+                    </h3>
+
+                </div>
+
+
+
+                <!-- PRESENT -->
+
+                <div class="summary-box present">
+
+                    <p>
+                        Present
+                    </p>
+
+
+                    <h3 id="presentCount">
+                        0
+                    </h3>
+
+                </div>
+
+
+
+                <!-- ABSENT -->
+
+                <div class="summary-box absent">
+
+                    <p>
+                        Absent
+                    </p>
+
+
+                    <h3 id="absentCount">
+                        0
+                    </h3>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 STUDENT LIST
+            ====================================== -->
+
+            <div
+                class="student-list"
+                id="studentList"
+            >
+
+
+                <div class="empty-attendance">
+
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+
+                    <h3>
+                        Click Modify Attendance
+                    </h3>
+
+
+                    <p>
+                        Select a date and click
+                        <strong>Modify Attendance</strong>
+                        to view attendance.
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 BOTTOM ACTIONS
+            ====================================== -->
+
+            <div class="bottom-attendance-actions">
+
+
+                <!-- RESET -->
+
+                <button
+                    id="resetAttendance"
+                    type="button"
+                    class="reset-attendance"
+                >
+
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                    Reset Attendance
+
+                </button>
+
+
+
+                <!-- SAVE -->
+
+                <button
+                    id="saveAttendance"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Attendance Changes
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="attendance.js"></script>
+
+
+</body>
+
+</html>

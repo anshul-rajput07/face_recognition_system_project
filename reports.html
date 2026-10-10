@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports | AttendPro</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Reports CSS -->
+    <link rel="stylesheet" href="reports.css">
+
+</head>
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <span>AttendPro</span>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-table-columns"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="attendance.html">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <span>Mark Attendance</span>
+
+            </a>
+
+
+            <a href="students.html">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>Students</span>
+
+            </a>
+
+
+            <a href="reports.html" class="active">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <span>Reports</span>
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-header">
+
+            <h1>Attendance Reports</h1>
+
+            <p>
+                View attendance statistics and student attendance records.
+            </p>
+
+        </div>
+
+
+        <!-- STATISTICS CARDS -->
+
+        <section class="stats-container">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon total-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <div>
+
+                    <p>Total Records</p>
+
+                    <h2 id="totalRecords">0</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon present-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+                <div>
+
+                    <p>Total Present</p>
+
+                    <h2 id="totalPresent">0</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon absent-icon">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </div>
+
+                <div>
+
+                    <p>Total Absent</p>
+
+                    <h2 id="totalAbsent">0</h2>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ATTENDANCE TABLE -->
+
+        <section class="report-section">
+
+            <div class="report-header">
+
+                <h2>Attendance Records</h2>
+
+                <input
+                    type="text"
+                    id="searchAttendance"
+                    placeholder="Search student..."
+                >
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+
+                            <th>Student ID</th>
+
+                            <th>Student Name</th>
+
+                            <th>Status</th>
+
+                            <th>Date</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="attendanceTable">
+
+                        <tr>
+
+                            <td colspan="5">
+
+                                Loading attendance records...
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- REPORTS JAVASCRIPT -->
+
+    <script src="reports.js"></script>
+
+
+</body>
+
+</html>

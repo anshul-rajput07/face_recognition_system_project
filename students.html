@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Students | AttendPro</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Students CSS -->
+    <link rel="stylesheet" href="students.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>AttendPro</span>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="attendance.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Mark Attendance</span>
+            </a>
+
+            <a href="students.html" class="active">
+                <i class="fa-solid fa-users"></i>
+                <span>Students</span>
+            </a>
+
+            <a href="reports.html">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>Students</h1>
+
+                <p>
+                    View and manage all registered students.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Statistics -->
+
+        <section class="stats-container">
+
+            <div class="stat-card">
+
+                <div class="stat-icon students-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <div>
+
+                    <p>Total Students</p>
+
+                    <h2 id="totalStudents">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Students List -->
+
+        <section class="students-section">
+
+            <div class="students-header">
+
+                <h2>Student Directory</h2>
+
+                <input
+                    type="text"
+                    id="searchStudent"
+                    placeholder="Search student..."
+                >
+
+            </div>
+
+
+            <div id="studentsContainer">
+
+                Loading students...
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Students JavaScript -->
+
+    <script src="students.js"></script>
+
+</body>
+
+</html>

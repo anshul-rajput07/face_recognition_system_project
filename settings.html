@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | AttendPro</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>AttendPro</span>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="attendance.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Mark Attendance</span>
+            </a>
+
+            <a href="students.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Students</span>
+            </a>
+
+            <a href="reports.html">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="settings.html" class="active">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <div class="page-header">
+            <h1>Settings</h1>
+            <p>Manage your account and system preferences.</p>
+        </div>
+
+
+        <!-- PROFILE SETTINGS -->
+        <section class="settings-card">
+
+            <div class="card-title">
+                <i class="fa-solid fa-user"></i>
+                <div>
+                    <h2>Teacher Profile</h2>
+                    <p>Manage your profile information.</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Teacher Name</label>
+                <input type="text" placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email">
+            </div>
+
+            <button class="save-btn">
+                Save Profile
+            </button>
+
+        </section>
+
+
+        <!-- SYSTEM SETTINGS -->
+        <section class="settings-card">
+
+            <div class="card-title">
+                <i class="fa-solid fa-school"></i>
+                <div>
+                    <h2>System Information</h2>
+                    <p>Configure attendance system details.</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>School / College Name</label>
+                <input type="text"
+                    placeholder="Enter institution name">
+            </div>
+
+            <button class="save-btn">
+                Save Changes
+            </button>
+
+        </section>
+
+
+        <!-- ACCOUNT SETTINGS -->
+        <section class="settings-card">
+
+            <div class="card-title">
+                <i class="fa-solid fa-lock"></i>
+                <div>
+                    <h2>Account Settings</h2>
+                    <p>Manage your account security.</p>
+                </div>
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="settings.js"></script>
+
+</body>
+
+</html>

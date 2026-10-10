@@ -1,0 +1,998 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    color: #1e293b;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+
+    background: #0f172a;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 18px;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: white;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    padding: 0 12px;
+    margin-bottom: 50px;
+}
+
+.sidebar-logo i {
+    font-size: 28px;
+    color: #3b82f6;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #94a3b8;
+
+    padding: 15px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.sidebar-menu a i {
+    width: 20px;
+    font-size: 17px;
+}
+
+.sidebar-menu a:hover {
+    background: #1e293b;
+    color: white;
+}
+
+.sidebar-menu a.active {
+    background: #2563eb;
+    color: white;
+
+    box-shadow:
+        0 8px 20px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout {
+    margin-top: auto;
+}
+
+.logout a {
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    color: #f87171;
+
+    padding: 15px;
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.logout a:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    margin-left: 260px;
+
+    min-height: 100vh;
+
+    padding: 35px 45px;
+}
+
+
+/* =========================
+   TOP HEADER
+========================= */
+
+.top-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.top-header h1 {
+    font-size: 30px;
+
+    color: #0f172a;
+
+    margin-bottom: 8px;
+}
+
+.top-header p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+
+/* =========================
+   DATE BOX
+========================= */
+
+.date-box {
+    background: white;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #475569;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 5px 20px
+        rgba(15, 23, 42, 0.05);
+}
+
+.date-box i {
+    color: #2563eb;
+}
+
+
+/* =========================
+   ATTENDANCE DETAILS CARD
+========================= */
+
+.selection-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(15, 23, 42, 0.05);
+}
+
+.selection-header {
+    margin-bottom: 25px;
+}
+
+.selection-header h2 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.selection-header p {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+
+/* =========================
+   SELECTION GRID
+========================= */
+
+.selection-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.select-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.select-group label {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #475569;
+}
+
+.select-group select,
+.select-group input {
+    width: 100%;
+
+    height: 48px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 8px;
+
+    padding: 0 12px;
+
+    outline: none;
+
+    font-size: 13px;
+
+    color: #475569;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+.select-group select:focus,
+.select-group input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================
+   ATTENDANCE CONTAINER
+========================= */
+
+.attendance-container {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(15, 23, 42, 0.05);
+}
+
+
+/* =========================
+   ATTENDANCE HEADER
+========================= */
+
+.attendance-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.attendance-header h2 {
+    font-size: 19px;
+    margin-bottom: 6px;
+}
+
+.attendance-header p {
+    font-size: 13px;
+
+    color: #94a3b8;
+
+    max-width: 500px;
+}
+
+
+/* =========================
+   TOP ACTION BUTTONS
+========================= */
+
+.attendance-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.attendance-actions button {
+    border: none;
+
+    padding: 11px 16px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================
+   START CAMERA BUTTON
+========================= */
+
+.start-camera {
+    background: #2563eb;
+    color: white;
+}
+
+.start-camera:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================
+   MODIFY ATTENDANCE BUTTON
+========================= */
+
+.modify-attendance {
+    background: #f3e8ff;
+
+    color: #9333ea;
+}
+
+.modify-attendance:hover {
+    background: #9333ea;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MARK ALL PRESENT
+========================= */
+
+.mark-all-present {
+    background: #dcfce7;
+
+    color: #16a34a;
+}
+
+.mark-all-present:hover {
+    background: #16a34a;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MARK ALL ABSENT
+========================= */
+
+.mark-all-absent {
+    background: #fee2e2;
+
+    color: #dc2626;
+}
+
+.mark-all-absent:hover {
+    background: #dc2626;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   ATTENDANCE SUMMARY
+========================= */
+
+.attendance-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.summary-box {
+    padding: 18px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e2e8f0;
+}
+
+.summary-box p {
+    font-size: 12px;
+
+    color: #64748b;
+
+    margin-bottom: 8px;
+}
+
+.summary-box h3 {
+    font-size: 24px;
+}
+
+
+/* TOTAL */
+
+.summary-box.total {
+    background: #eff6ff;
+}
+
+.summary-box.total h3 {
+    color: #2563eb;
+}
+
+
+/* PRESENT */
+
+.summary-box.present {
+    background: #f0fdf4;
+}
+
+.summary-box.present h3 {
+    color: #16a34a;
+}
+
+
+/* ABSENT */
+
+.summary-box.absent {
+    background: #fef2f2;
+}
+
+.summary-box.absent h3 {
+    color: #dc2626;
+}
+
+
+/* =========================
+   STUDENT LIST
+========================= */
+
+.student-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =========================
+   STUDENT ROW
+========================= */
+
+.student-row {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.student-row:hover {
+    border-color: #93c5fd;
+
+    box-shadow:
+        0 5px 15px
+        rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================
+   STUDENT DETAILS
+========================= */
+
+.student-details {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.student-number {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.student-details h3 {
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.student-details p {
+    font-size: 12px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================
+   PRESENT / ABSENT BUTTONS
+========================= */
+
+.attendance-buttons {
+    display: flex;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+.present-btn,
+.absent-btn {
+    border: 1px solid #e2e8f0;
+
+    background: white;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+/* PRESENT */
+
+.present-btn {
+    color: #16a34a;
+}
+
+.present-btn:hover,
+.present-btn.active {
+    background: #16a34a;
+
+    color: white;
+
+    border-color: #16a34a;
+}
+
+
+/* ABSENT */
+
+.absent-btn {
+    color: #dc2626;
+}
+
+.absent-btn:hover,
+.absent-btn.active {
+    background: #dc2626;
+
+    color: white;
+
+    border-color: #dc2626;
+}
+
+
+/* =========================
+   EMPTY ATTENDANCE
+========================= */
+
+.empty-attendance {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    color: #64748b;
+}
+
+.empty-attendance i {
+    font-size: 40px;
+
+    color: #2563eb;
+
+    margin-bottom: 15px;
+}
+
+.empty-attendance h3 {
+    color: #334155;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   BOTTOM BUTTONS
+========================= */
+
+.bottom-attendance-actions {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+/* COMMON BOTTOM BUTTON */
+
+.bottom-attendance-actions button {
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    transition: 0.3s;
+}
+
+
+/* =========================
+   RESET ATTENDANCE
+========================= */
+
+.reset-attendance {
+    background: #fff7ed;
+
+    color: #ea580c;
+}
+
+.reset-attendance:hover {
+    background: #ea580c;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px
+        rgba(234, 88, 12, 0.2);
+}
+
+
+/* =========================
+   SAVE ATTENDANCE
+========================= */
+
+#saveAttendance {
+    background: #2563eb;
+
+    color: white;
+
+    margin-left: auto;
+}
+
+#saveAttendance:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================
+   DISABLED BUTTONS
+========================= */
+
+button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none !important;
+    .present-btn:disabled,
+    .absent-btn:disabled {
+    pointer-events: none;
+    opacity: 0.55;
+}
+}
+
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+
+    .attendance-header {
+        flex-direction: column;
+    }
+
+    .attendance-actions {
+        justify-content: flex-start;
+    }
+
+}
+
+
+/* =========================
+   MEDIUM SCREEN
+========================= */
+
+@media (max-width: 1100px) {
+
+    .selection-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        width: 70px;
+
+        padding: 25px 10px;
+    }
+
+    .sidebar-logo span,
+    .sidebar-menu span,
+    .logout span {
+        display: none;
+    }
+
+    .sidebar-logo {
+        justify-content: center;
+
+        padding: 0;
+
+        margin-bottom: 40px;
+    }
+
+    .sidebar-menu a,
+    .logout a {
+        justify-content: center;
+
+        padding: 15px 5px;
+    }
+
+    .main-content {
+        margin-left: 70px;
+
+        padding: 25px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .main-content {
+        padding: 20px 15px;
+    }
+
+
+    .top-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .date-box {
+        width: 100%;
+    }
+
+
+    .attendance-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+
+    .attendance-actions {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+
+    .attendance-actions button {
+        width: 100%;
+    }
+
+
+    .attendance-summary {
+        grid-template-columns: 1fr;
+    }
+
+
+    .student-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .attendance-buttons {
+        width: 100%;
+    }
+
+
+    .present-btn,
+    .absent-btn {
+        flex: 1;
+    }
+
+
+    /* Bottom buttons */
+
+    .bottom-attendance-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .bottom-attendance-actions button {
+        width: 100%;
+    }
+
+
+    #saveAttendance {
+        margin-left: 0;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+    .attendance-actions {
+        grid-template-columns: 1fr;
+    }
+
+}
